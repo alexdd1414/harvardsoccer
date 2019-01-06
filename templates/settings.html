@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Settings
+{% endblock %}
+
+{% block main %}
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card" style="width: 50rem">
+      <div class="card-body">
+        <h5 class="card-title">{{ player[0]["name"] }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Contact: {{ email }} </h6>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><strong>Plans:</strong> {{ player[0]["plans"] }}</li>
+          <li class="list-group-item"><strong>Hometown:</strong> {{ player[0]["hometown"] }}</li>
+          <li class="list-group-item"><strong>Graduation Year:</strong> {{ player[0]["year"] }}</li>
+          <li class="list-group-item"><strong>Team:</strong> {{ player[0]["team"] }}</li>
+          <li class="list-group-item"><strong>Concentration:</strong> {{ player[0]["concentration"] }}</li>
+          <li class="list-group-item"><strong>Interests:</strong> {% for interest in interests %} {{ interest }} {% endfor %}</li>
+          <li class="list-group-item"><strong>Ideal Summer Internship:</strong> {{ player[0]["internship"] }}</li>
+          <li class="list-group-item"><strong>Ideal Job:</strong> {{ player[0]["postgrad"] }}</li>
+          <li class="list-group-item"><strong>Longterm Career:</strong> {{ player[0]["longterm"] }}</li>
+        </ul>
+      </div>
+      <div class="card-body">
+        {% if player[0]["linkedin"] %}
+        <a href="{{ player[0]['linkedin'] }}" class="card-link">LinkedIn</a>
+        {% endif %}
+        <a href="/change" class="card-link">Make Changes</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Javascript code that on submission sends email to check function to make sure it has not been taken-->
+    <script>
+        document.querySelector('form').onsubmit = function(event){
+            event.preventDefault();
+            $.get("/check", {email: document.querySelector("input[name = email]").value},function(data){
+                if (data)
+                {
+                    document.querySelector('form').submit();
+                }
+                else
+                {
+                    alert("Email is taken. Choose a differnet email");
+                }
+            });
+        };
+    </script>
+
+
+{% endblock %}

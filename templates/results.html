@@ -1,0 +1,133 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search Results
+{% endblock %}
+
+{% block main %}
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Concentration</th>
+              <th scope="col">plans</th>
+              <th scope="col">Team</th>
+              <th scope="col">Graduation Year</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td class="card-subtitle mb-2 text-muted">Best Match</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+              </tr>
+            {% for player in best_match %}
+            <tr>
+              <td>{{ player.name }}</td>
+              <td>{{ player.concentration }}</td>
+              <td>{{ player.plans }}</td>
+              <td>{{ player.team }}</td>
+              <td>{{ player.year }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        <br> <br>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Concentration</th>
+              <th scope="col">plans</th>
+              <th scope="col">Team</th>
+              <th scope="col">Graduation Year</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td class="card-subtitle mb-2 text-muted">Better Match</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+              </tr>
+            {% for player in better_match %}
+            <tr>
+              <td>{{ player.name }}</td>
+              <td>{{ player.concentration }}</td>
+              <td>{{ player.plans }}</td>
+              <td>{{ player.team }}</td>
+              <td>{{ player.year }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        <br> <br>
+        <table class="table table-striped">
+           <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Concentration</th>
+              <th scope="col">plans</th>
+              <th scope="col">Team</th>
+              <th scope="col">Graduation Year</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td class="card-subtitle mb-2 text-muted">Good Match</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+              </tr>
+            {% for player in good_match %}
+            <tr>
+              <td>{{ player.name }}</td>
+              <td>{{ player.concentration }}</td>
+              <td>{{ player.plans }}</td>
+              <td>{{ player.team }}</td>
+              <td>{{ player.year }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        <br> <br>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Concentration</th>
+              <th scope="col">plans</th>
+              <th scope="col">Team</th>
+              <th scope="col">Graduation Year</th>
+            </tr>
+          </thead>
+          <tbody>
+               <tr>
+                  <td class="card-subtitle mb-2 text-muted">No Match</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+              </tr>
+            {% for player in no_match %}
+            <tr>
+              <td>{{ player.name }}</td>
+              <td>{{ player.concentration }}</td>
+              <td>{{ player.plans }}</td>
+              <td>{{ player.team }}</td>
+              <td>{{ player.year }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <a href="/players" class="btn btn-primary" >Player Database</a>
+        </div>
+  </div>
+{% endblock %}

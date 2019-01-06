@@ -1,0 +1,160 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Change
+{% endblock %}
+
+{% block main %}
+
+<form action="/change" method="post">
+  <h4 class="form-group row">Change Account</h4>
+  <h5 class="form-group row mb-2 text-muted" >You must enter your existing data into the all the fields</h5>
+
+    <form>
+          <!-- created a header using boostraps css and coloring of my own -->
+          <!--https://getbootstrap.com/docs/4.1/components/forms/ -->
+          <div class="form-group row">
+            <label for="name" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+              <!-- created a text input for superhero name -->
+              <input type="text" class="form-control" placeholder="Full Name" name="name" value="{{ player[0]['name'] }}">
+            </div>
+          </div>
+          <br>
+
+          <div class="form-group row">
+            <label for="email" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+              <!-- created a text input for superhero name -->
+              {{ email }}
+            </div>
+          </div>
+          <br>
+
+          <div class="form-group row">
+            <label for="team" class="col-sm-2 col-form-label">Team</label>
+            <div class="col-sm-2">
+              <select class="custom-select mr-sm-10" name="team">
+                  <option selected disabled>Choose team</option>
+                  <option value="Harvard Men's Soccer"> Harvard Men's Soccer</option>
+                  <option value="Harvard Women's Soccer"> Harvard Women's Soccer</option>
+              </select>
+            </div>
+          </div>
+          <br>
+
+          <div class="form-group row">
+            <label for="year" class="col-sm-2 col-form-label">Year</label>
+            <div class="col-sm-2">
+              <select class="custom-select mr-sm-2" name="year">
+                  <option selected disabled>Year</option>
+                  <option value="2022">2022</option>
+                  <option value="2021">2021</option>
+                  <option value="2020">2020</option>
+                  <option value="2019">2019</option>
+                  <option value="Graduate">Graduate</option>
+              </select>
+            </div>
+          </div>
+          <br>
+
+          <div class="form-group row">
+            <label for="concentration" class="col-sm-2 col-form-label">Concentration</label>
+            <div class="col-sm-10">
+              <!-- created a text input for superhero name -->
+              <input type="text" class="form-control"  placeholder="Concentration" name="concentration" value="{{ player[0]['concentration'] }}">
+            </div>
+          </div>
+          <br>
+
+          <div class="form-group row">
+            <label for="hometown" class="col-sm-2 col-form-label">Hometown</label>
+            <div class="col-sm-10">
+              <!-- created a text input for superhero name -->
+              <input type="text" class="form-control"  placeholder="Hometown (City, State, Ex: Cambridge, MA)" name="hometown" value="{{ player[0]['hometown'] }}">
+            </div>
+          </div>
+          <br>
+
+         <div class="form-group row">
+            <div class="col-sm-2">Professional Interests</div>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1" value="Sports" name="Sports">Sports<br>
+                    <input class="form-check-input" type="checkbox" id="gridCheck2" value="Health" name="Health">Health<br>
+                    <input class="form-check-input" type="checkbox" id="gridCheck3" value="Business" name="Business">Business<br>
+                    <input class="form-check-input" type="checkbox" id="gridCheck4" value="Government" name="Government">Government<br>
+                    <input class="form-check-input" type="checkbox" id="gridCheck5" value="Law" name="Law">Law<br>
+                    <input class="form-check-input" type="checkbox" id="gridCheck6" value="Education" name="Education">Education<br>
+                    <input class="form-check-input" type="checkbox" id="gridCheck7" value="Technology" name="Technology">Technology<br>
+                    <input class="form-check-input" type="checkbox" id="gridCheck8" value="Entrepreneurship" name="Entrepreneurship">Entrepreneurship<br>
+                    <input class="form-check-input" type="checkbox" id="gridCheck9" value="Finance" name="Finance">Finance <br>
+                    <input class="form-check-input" type="checkbox" id="gridCheck10" value="Media" name="Media">Media</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="internship" class="col-sm-2 col-form-label">Ideal Summer Internship</label>
+            <div class="col-sm-10">
+              <!-- created a text input for superhero name -->
+              <input type="text" class="form-control"  placeholder="Ideal Summer Intership" name="internship">
+            </div>
+          </div>
+          <br>
+
+        <div class="form-group row">
+            <label for="postgrad" class="col-sm-2 col-form-label">Ideal Postgrad Job</label>
+            <div class="col-sm-10">
+              <!-- created a text input for superhero name -->
+              <input type="text" class="form-control"  placeholder="Ideal postgrad job" name="postgrad">
+            </div>
+          </div>
+          <br>
+
+        <div class="form-group row">
+            <label for="longterm" class="col-sm-2 col-form-label">Longterm Career</label>
+            <div class="col-sm-10">
+              <!-- created a text input for superhero name -->
+              <input type="text" class="form-control"  placeholder="Ideal Career" name="longterm">
+            </div>
+          </div>
+          <br>
+
+        <div class="form-group row">
+            <label for="linkedin" class="col-sm-2 col-form-label">LinkedIn</label>
+            <div class="col-sm-10">
+              <!-- created a text input for superhero name -->
+              <input type="text" class="form-control"  placeholder="Linkedin URL" name="linkedin">
+            </div>
+          </div>
+          <br>
+
+          <div class="form-group row">
+            <label for="image" class="col-sm-2 col-form-label">Profile Picture</label>
+            <div class="col-sm-10">
+              <!-- created a text input for superhero name -->
+              <input type="text" class="form-control"  placeholder="Profile picture: Image URL" name="image">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="plans" class="col-sm-2 col-form-label">Plans</label>
+            <div class="col-sm-2">
+              <select class="custom-select mr-sm-2" name="plans">
+                  <option selected disabled>Plans</option>
+                  <option value="All Set">All Set</option>
+                  <option value="Still Looking for Something">Still Looking for Something</option>
+              </select>
+            </div>
+          </div>
+          <br>
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <button class="btn btn-primary" type="submit" value="Register">Update Account</button>
+            </div>
+          </div>
+    </form>
+
+{% endblock %}

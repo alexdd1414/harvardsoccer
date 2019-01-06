@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block main %}
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-4"> Harvard Soccer Connections</h1>
+        <p class="lead">Connecting Harvard Athletes to Career Opportunitites</p>
+        <hr class="my-4">
+        <p> Click to search for players by interest, concentration, and graduation year. </p>
+        <a class="btn btn-primary btn-lg" href="/search" role="button">Search for Players &raquo;</a>
+    </div>
+</div>
+
+<div class="card-deck">
+    <div class="card"  class="col-md-3" >
+        <div class="card-body">
+            <h5 class="card-title">Players</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Meet our player</h6>
+            <p class="card-text">Learn more about what our players hope to do beyond Harvard</p>
+            <a href="/players" class="card-link">Learn more &raquo;</a>
+        </div>
+    </div>
+    <div class="card"  class="col-md-3" >
+        <div class="card-body">
+            <h5 class="card-title">Map</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Visualize player hometowns</h6>
+            <p class="card-text">Learn about the interactive map</p>
+            <a href="/maps" class="card-link">Learn more &raquo;</a>
+        </div>
+    </div>
+    <div class="card" class="col-md-3" >
+        <div class="card-body">
+            <h5 class="card-title">Harvard Soccer</h5>
+            <h6 class="card-subtitle mb-2 text-muted">About the teams</h6>
+            <p class="card-text">Learn about our players and our program</p>
+            <a href="/harvard" class="card-link">Learn more &raquo;</a>
+        </div>
+    </div>
+    <div class="card" class="col-md-3" >
+        <div class="card-body">
+            <h5 class="card-title">About Us</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Our mission</h6>
+            <p class="card-text">Learn about the creators</p>
+            <a href="/us" class="card-link">Learn more &raquo;</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

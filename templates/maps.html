@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Interactive Map
+{% endblock %}
+<head>
+    <meta name="viewport" content="intial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+        #map {
+            height:100%;
+        }
+        html, body {
+            height:100%;
+            margin:0;
+            padding:0;
+        }
+    </style>
+</head>
+{% block main %}
+
+<div class="jumbotron">
+  <h1 class="display-4">Interactive Map</h1>
+  <p class="lead">See how far away you and your company is from our athletes</p>
+  <hr class="my-4">
+  <p>Click on the pin to reveal the student name and city</p>
+  <a class="btn btn-primary btn-lg" href="#" role="button">Player Database</a>
+</div>
+<div class="container" class="jumbotron">
+    <!--<div class="card" style="width:63.2rem">-->
+    <!--  <div class="card-body">-->
+    <!--    <h5 class="card-title">Locate Players</h5>-->
+    <!--    <h6 class="card-subtitle mb-2 text-muted">Enter Your Location</h6>-->
+    <!--    <p class="card-text">See how far your are from our players</p>-->
+    <!--    <p class="card-text">Test Maps route</p>-->
+    <!--    <a href="/maps" class="card-link">Test</a>-->
+    <!--  </div>-->
+    <!--</div>-->
+    <div id="map" style="height:40rem"></div>
+</div>
+<!-- Had to add this small line of Javascript here because the players object did not make it to the maps.js file directly from flask-->
+<script>
+    let player = JSON.parse('{{ player | tojson}}')
+</script>
+<!--AIzaSyBuBPQeZU7Q-DP86AdYBcPpvytAAb_UGIE google maps and geocorder API Key-->
+<script src=static/maps.js></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuBPQeZU7Q-DP86AdYBcPpvytAAb_UGIE&callback=initMap"
+  type="text/javascript"></script>
+
+{% endblock %}

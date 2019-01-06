@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block main %}
+<div class="card" style="width:65rem;">
+    <div class="card-body">
+        <div class="card-text">
+            <div class="form-group">
+                <div class="jumbotron">
+                    <div class="container">
+                        <h2 class="display-4">Connecting Harvard Athletes to Career Opportunitites</h2>
+                        <p class="lead">Connecting Harvard Athletes to Career Opportunitites</p>
+                        <hr class="my-4">
+                        <p> Search for players based on your criteria of interest</p>
+                        <p>
+                    </div>
+                </div>
+                <form action="/search" method="post">
+                    <div class="card" style="width:62rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Concentration</h5>
+                            <div class="card-text">
+                                <div class="form-group">
+                                    <select class="form-control" name="concentration">
+                                        <option selected value="2">All</option>
+                                        {% for concentration in concentrations %}
+                                            <option value="{{ concentration }}">{{ concentration.concentration }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <hr class="my-4">
+                    </div>
+                    <div class="card-deck">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Graduation Year</h5>
+                                <div class="card-text">
+                                    <input type="checkbox" name="2022" value="2022"> 2022<br>
+                                    <input type="checkbox" name="2021" value="2021"> 2021<br>
+                                    <input type="checkbox" name="2020" value="2020"> 2020<br>
+                                    <input type="checkbox" name="2019" value="2019"> 2019<br>
+                                    <input type="checkbox" name="grad" value="1"> Recent Graduate<br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Professional Interests</h5>
+                                <div class="card-text">
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck1" value="Sports" name="Sports">Sports<br>
+                                    <input class="form-check-input" type="checkbox" id="gridCheck2" value="Health" name="Health">Health<br>
+                                    <input class="form-check-input" type="checkbox" id="gridCheck3" value="Business" name="Business">Business<br>
+                                    <input class="form-check-input" type="checkbox" id="gridCheck4" value="Government" name="Government">Government<br>
+                                    <input class="form-check-input" type="checkbox" id="gridCheck5" value="Law" name="Law">Law<br>
+                                    <input class="form-check-input" type="checkbox" id="gridCheck6" value="Education" name="Education">Education<br>
+                                    <input class="form-check-input" type="checkbox" id="gridCheck7" value="Technology" name="Technology">Technology<br>
+                                    <input class="form-check-input" type="checkbox" id="gridCheck8" value="Entrepreneurship" name="Entrepreneurship">Entrepreneurship<br>
+                                    <input class="form-check-input" type="checkbox" id="gridCheck9" value="Finance" name="Finance">Finance <br>
+                                    <input class="form-check-input" type="checkbox" id="gridCheck10" value="Media" name="Media">Media</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                          <button class="btn btn-primary" type="submit" value="Register">Find Players &raquo;</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
