@@ -38,7 +38,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Configure CS50 Library to use SQLite database
-db = SQL("postgres://ryowlxqrpnveko:686006629f22ca5e92cfdf50d9adfddfd294eb2db63c9d3f1cfdb8c1f3b293c4@ec2-107-20-237-78.compute-1.amazonaws.com:5432/d1s2ihgqf07n7u")
+db = SQL("")
 
 # render the homepage of the website
 @app.route("/")
