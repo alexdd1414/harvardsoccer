@@ -10,3 +10,5 @@ helpers
 os 
 json
 requests
+functools
+urllib.parse
