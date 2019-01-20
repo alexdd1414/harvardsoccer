@@ -1,3 +1,0 @@
-# harvardsoccerconnections
-# harvardsoccerconnections
-# harvardsoccerconnections
