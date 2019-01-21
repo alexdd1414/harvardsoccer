@@ -2,12 +2,12 @@ flask
 flask_session
 gunicorn
 cs50
-werkzeug.exceptions
-werkzeug.security
-ast
-helpers
-os 
-json
+# werkzeug.exceptions
+# werkzeug.security
+# ast
+# helpers
+# os 
+# json
 requests
 functools
 urllib.parse
