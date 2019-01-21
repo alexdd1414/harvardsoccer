@@ -3,3 +3,4 @@ flask_session
 gunicorn
 cs50
 requests
+psycopg2
