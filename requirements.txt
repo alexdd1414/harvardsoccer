@@ -2,7 +2,6 @@ flask
 flask_session
 gunicorn
 cs50
-tempfile
 werkzeug.exceptions
 werkzeug.security
 ast
