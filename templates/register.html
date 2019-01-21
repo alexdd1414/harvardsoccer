@@ -1,36 +1,42 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Players
+    Register
 {% endblock %}
 
 {% block main %}
-<div class="row">
-{% for player in players %}
-  <div class="col-sm-6">
-    <div class="card" style="width: 30rem">
-      <img class="card-img-top" src="{{ player.image }}" onerror=this.src="https://upload.wikimedia.org/wikipedia/commons/9/95/John_Harvard_Statue_right_side_of_head.jpg" alt="">
-      <div class="card-body">
-        <h5 class="card-title">{{ player.name }}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">{{ player.plans }}</h6>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"><strong>Contact:</strong> {{ player.email }}</li>
-          <li class="list-group-item"><strong>Hometown:</strong> {{ player.hometown }}</li>
-          <li class="list-group-item"><strong>Graduation Year:</strong> {{ player.year }}</li>
-          <li class="list-group-item"><strong>Team:</strong> {{ player.team }}</li>
-          <li class="list-group-item"><strong>Concentration:</strong> {{ player.concentration }}</li>
-          <li class="list-group-item"><strong>Interests:</strong> {% for interest in players_dict[player.id]  %}  {{ interest }} {% endfor %}</li>
-          <li class="list-group-item"><strong>Ideal Summer Internship:</strong> {{ player.internship }}</li>
-          <li class="list-group-item"><strong>Ideal Job:</strong> {{ player.postgrad }}</li>
-          <li class="list-group-item"><strong>Longterm Career:</strong> {{ player.longterm }}</li>
-        </ul>
-      </div>
-      <div class="card-body">
-        <a href="{{ player.linkedin }}" class="card-link">LinkedIn</a>
-      </div>
-    </div>
-  </div>
-{% endfor %}
-</div>
+    <!-- Register for that takes input email, password, and password confirmation -->
+    <form action="/register" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="email" placeholder="Enter Harvard Email" type="email">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="confirmation" placeholder="Password Confirmattion" type="password">
+        </div>
+        <button class="btn btn-danger" type="submit">Register</button>
+    </form>
+    <footer class="small text-center text-muted">
+        Have an account? <a href="/login">Login</a>
+    </footer>
+
+    <!--Javascript code that on submission sends email to check function to make sure it has not been taken-->
+    <script>
+        document.querySelector('form').onsubmit = function(event){
+            event.preventDefault();
+            $.get("/check", {email: document.querySelector("input[name = email]").value},function(data){
+                if (data)
+                {
+                    document.querySelector('form').submit();
+                }
+                else
+                {
+                    alert("Email is taken. Choose a different email");
+                }
+            });
+        };
+    </script>
 
 {% endblock %}
