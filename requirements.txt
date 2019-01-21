@@ -2,6 +2,6 @@ flask
 flask_session
 gunicorn
 cs50
-ast
+# ast
 requests
 urllib.parse
